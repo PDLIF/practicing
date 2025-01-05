@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Inter:opsz,wght@14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -28,22 +26,68 @@ nav {
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, .10);;
 }
 
-nav ul {
+nav .menu-main {
     display: flex;
     flex-direction: row;
-
     list-style: none;
+
+    position: relative;
 }
 
-ul li a {
+.menu-main > li a {
     display: block;
     text-decoration: none;
     color: rgb(18, 18, 18);
     padding: 1rem 2rem;
 }
 
-ul a:hover {
+.menu-main > li:hover a {
     background-color: #444;
     color: #fff;
     cursor: pointer;
+}
+
+.menu-sub li:hover a {
+    text-decoration: underline;
+}
+
+.menu-sub {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    background: #444;
+    width: 100%;
+    display: none;
+    color: #fff;
+    padding: 2rem;
+    position: absolute;
+    left: 0;
+}
+
+.menu-main > li:hover .menu-sub {
+    display: flex;
+}
+
+.menu-sub li {
+    display: block;
+}
+
+.menu-sub li a {
+    padding: 0;
+}
+
+.menu-category-heading {
+    margin: 2rem 0 1rem;
+    cursor: default;
+}
+
+.menu-category-heading:first-of-type {
+    margin-top: 0;
+}
+
+.menu-col ul {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
 }
