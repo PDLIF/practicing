@@ -134,6 +134,10 @@ select {
     gap: var(--gap, 1rem);
 }
 
+.flex.event-columns > * {
+    width: 100%;
+}
+
 .grid {
     display: grid;
     gap: var(--gap, 1rem);
@@ -151,20 +155,35 @@ select {
 
 .grid-container {
     display: grid;
+    text-align: center;
+    place-items: center;
+    padding-inline: 1rem;
+}
+
+.grid-container * {
+    max-width: 50ch;
 }
 
 @media (min-width: 45em) {
     .grid-container {
+        text-align: left;
         column-gap: var(--container-gap, 2rem);
-        grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0px, 80rem)) minmax(2rem, 1fr);
+        grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(1rem, 1fr);
     }
 
     .grid-container > *:first-child {
         grid-column: 2;
+        outline: 1px solid red;
     }
     
     .grid-container > *:last-child {
         grid-column: 3;
+        outline: 1px solid red;
+    }
+
+    .grid-container--home {
+        padding-bottom: max(6rem, 20vh);
+        align-items: end;
     }
 }
 
@@ -251,6 +270,7 @@ select {
 .large-btn {
     position: relative;
     z-index: 1;
+    font-size: 2rem;
     display: inline-grid;
     padding: 0 2em; 
     border-radius: 50%;
