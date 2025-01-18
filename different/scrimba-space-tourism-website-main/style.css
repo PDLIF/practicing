@@ -285,13 +285,40 @@ select {
     transform: scale(1.4);
 }
 
+/* primary header */
+
+.logo {
+    margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
+}
+
+.primary-header {
+    justify-content: space-between;
+    align-items: center;
+}
+
 .primary-navigation {
-    --underline-gap: .5rem;
+    --gap: clamp(1.5rem, 3vw, 3.5rem);
+    --underline-gap: 2rem;
     list-style: none;
     margin: 0;
     padding: 0;
-    background-color: hsl( var(--clr-white) / .02 );
-    -webkit-backdrop-filter: blur(3rem);
+    background-color: hsl( var(--clr-white) / .07 );
+    backdrop-filter: blur(.8rem);
+}
+
+@supports not ( backdrop-filter: blur(8rem) ) {
+    .primary-navigation {
+        -webkit-backdrop-filter: blur(.8rem);
+    }
+}
+
+.primary-navigation a {
+    text-decoration: none;
+}
+
+.primary-navigation a > span {
+    font-weight: 700;
+    margin-right: .5rem;
 }
 
 .mobile-nav-toggle {
@@ -327,14 +354,6 @@ select {
         transition: transform 250ms ease-in;
     }
 
-    .primary-navigation[data-visible='true'] {
-        transform: translateX(0%);
-    }
-
-    .mobile-nav-toggle[aria-expanded='true'] {
-        background-image: url(./assets/shared/icon-close.svg);
-    }
-
     .primary-navigation.underline-indicators > .active,
     .primary-navigation.underline-indicators > * {
         border: 0;
@@ -343,15 +362,57 @@ select {
     .mobile-nav-toggle {
         display: block;
     }
+
+    .primary-navigation[data-visible='true'] {
+        transform: translateX(0%);
+    }
+
+    .mobile-nav-toggle[aria-expanded='true'] {
+        background-image: url(./assets/shared/icon-close.svg);
+    }
+
+    .mobile-nav-toggle:focus {
+        outline: 5px solid red;
+        outline-offset: 5px;
+    }
 }
 
-.primary-navigation a {
-    text-decoration: none;
+@media (min-width: 35rem) {
+    .primary-navigation {
+        padding-inline: clamp(3rem, 7vw, 6rem);
+    }
 }
 
-.primary-navigation a > span {
-    font-weight: 700;
-    margin-right: .5rem;
+@media (min-width: 35rem) and (max-width: 44.999rem) {
+    .primary-navigation {
+        padding-inline: 3rem;
+    }
+    
+    .primary-navigation a > span {
+        display: none;
+    }
+}
+
+@media (min-width: 45rem) {
+    .primary-header::before {
+        content: '';
+        display: block;
+        z-index: 10;
+        position: relative;
+        height: 1px;
+        width: 100%;
+        margin-inline: 1rem -3rem;
+        background: hsl( var( --clr-white ) / .25 );
+        order: 2;
+    }
+
+    .primary-header > nav {
+        order: 3;
+    }
+    
+    .primary-navigation {
+        margin-block: 2rem;
+    }
 }
 
 .underline-indicators > * {
