@@ -15,11 +15,11 @@
 </head>
 <body class="bg-dark text-white">
         
-    <div class="container" style="--flow-space: 9rem;">
-        <h1>Design system</h1>
+    <div class="container flow" style="--flow-space: 9rem;">
+        <h1 style="margin-top: 4rem; margin-left: 1rem;">Design system</h1>
         
         <section id="colors">
-            <h2 class="numbered-title"><span>01</span> colors</h2>
+            <h2 class="numbered-title" style="margin-bottom: 3rem"><span>01</span> colors</h2>
             <div class="flex">
                 <div style="flex-grow: 1;">
                     <div class="bg-dark text-white ff-serif fs-500" style="padding: 3rem 1rem 1rem; border: 1px solid white">#0B0D17</div>
@@ -40,9 +40,9 @@
         </section>
 
         <section id="typography">
-            <h2 class="numbered-title"><span>02 </span>Typogrphy</h2>
+            <h2 class="numbered-title" style="margin-bottom: 3rem"><span>02 </span>Typogrphy</h2>
             <div class="flex">
-                <div class="flow-2" style="flex-basis: 100%">
+                <div class="flow" style="flex-basis: 100%; --flow-space: 3rem;">
                     <div>
                         <p class="text-light">Heading 1 - Bellefair Regular - 150px</p>
                         <p class="ff-serif fs-900 uppercase">Earth</p>
@@ -65,7 +65,7 @@
                     </div>
                 </div>
 
-                <div class="flow-2" style="flex-basis: 100%">
+                <div class="flow" style="flex-basis: 100%; --flow-space: 3rem;">
                     <div> 
                         <p class="text-light">Subheading 1 - Bellefair Regular - 28px</p>
                         <p class="ff-serif fs-500 uppercase">384,400 km</p>
@@ -86,51 +86,52 @@
             </div>
         </section>
 
-        <section id="interactive-elements" style="--flow-space: 3rem">
-            <h2 class="numbered-title"><span>03</span> Interactive elements</h2>
-            
-            <!-- navigation -->
-            <div>
-                <nav>
-                    <ul class="primary-navigation underline-indicators flex" style="margin-bottom: 10rem; justify-content: center;">
-                        <li class="active"><a class="uppercase text-white letter-spacing-2" href="#"><span>01</span>Active</a></li>
-                        <li><a class="uppercase text-white letter-spacing-2" href="#"><span>02</span>Hovered</a></li>
-                        <li><a class="uppercase text-white letter-spacing-2" href="#"><span>03</span>Idle</a></li>
-                    </ul>
-                </nav>
-            </div>
-            
-            <div class="flex" style="justify-content: space-around;">
+        <section>
+            <div class="flow" id="interactive-elements" style="--flow-space: 3rem;">
+                <h2 class="numbered-title" style="margin-bottom: 3rem"><span>03</span>Interactive elements</h2>
+                
+                <!-- navigation -->
                 <div>
-                    <!-- explore button -->
-                    <a href="" class="large-btn uppercase ff-serif fs-600 text-dark bg-white">Explore</a>
+                    <nav>
+                        <ul class="primary-navigation underline-indicators flex" style="margin-bottom: 10rem; justify-content: center;">
+                            <li class="active"><a class="uppercase text-white letter-spacing-2" href="#"><span>01</span>Active</a></li>
+                            <li><a class="uppercase text-white letter-spacing-2" href="#"><span>02</span>Hovered</a></li>
+                            <li><a class="uppercase text-white letter-spacing-2" href="#"><span>03</span>Idle</a></li>
+                        </ul>
+                    </nav>
                 </div>
                 
-                <div class="flow-2" style="margin-bottom: 50vh;">
-                    <!-- Tabs -->
-                    
-                    <div class="tab-list underline-indicators flex">
-                        <button aria-selected="true" class="uppercase ff-sans-cond text-light bg-dark letter-spacing-2">Mars</button>
-                        <button aria-selected="false" class="uppercase ff-sans-cond text-light bg-dark letter-spacing-2">Moon</button>
-                        <button aria-selected="false" class="uppercase ff-sans-cond text-light bg-dark letter-spacing-2">Europa</button>
+                <div class="flex" style="justify-content: space-around;">
+                    <div>
+                        <!-- explore button -->
+                        <a href="" class="large-btn uppercase ff-serif fs-600 text-dark bg-white">Explore</a>
                     </div>
                     
-                    <!-- Dots -->
-                    <div class="dot-indicators flex" style="justify-content: center;">
-                        <button aria-selected="true" ><span class="sr-only">Slide title</span></button>
-                        <button aria-selected="false"><span class="sr-only">Slide title</span></button>
-                        <button aria-selected="false"><span class="sr-only">Slide title</span></button>
-                    </div>
-                    
-                    <!-- Numbers -->
-                    <div class="number-indicators flex" style="align-items: center;">
-                        <button aria-selected="true">1</button>
-                        <button aria-selected="false">2</button>
-                        <button aria-selected="false">3</button>
+                    <div class="flow" style="margin-bottom: 50vh; --flow-space: 3rem;">
+                        <!-- Tabs -->
+                        
+                        <div class="tab-list underline-indicators flex">
+                            <button aria-selected="true" class="uppercase ff-sans-cond text-light bg-dark letter-spacing-2">Mars</button>
+                            <button aria-selected="false" class="uppercase ff-sans-cond text-light bg-dark letter-spacing-2">Moon</button>
+                            <button aria-selected="false" class="uppercase ff-sans-cond text-light bg-dark letter-spacing-2">Europa</button>
+                        </div>
+                        
+                        <!-- Dots -->
+                        <div class="dot-indicators flex" style="justify-content: center;">
+                            <button aria-selected="true" ><span class="sr-only">Slide title</span></button>
+                            <button aria-selected="false"><span class="sr-only">Slide title</span></button>
+                            <button aria-selected="false"><span class="sr-only">Slide title</span></button>
+                        </div>
+                        
+                        <!-- Numbers -->
+                        <div class="number-indicators flex" style="align-items: center;">
+                            <button aria-selected="true">1</button>
+                            <button aria-selected="false">2</button>
+                            <button aria-selected="false">3</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            
         </section>
 
     </div>
