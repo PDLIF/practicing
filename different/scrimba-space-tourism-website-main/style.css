@@ -13,7 +13,7 @@
     --fs-800: 3.5rem;
     --fs-700: 1.5rem;
     --fs-600: 1rem;
-    --fs-500: 1.75rem;
+    --fs-500: 1.2rem;
     --fs-400: 0.9375rem;
     --fs-300: 1rem;
     --fs-200: 0.875rem;
@@ -33,6 +33,7 @@
         --fs-800: 5rem;
         --fs-700: 2.5rem;
         --fs-600: 1.5rem;
+        --fs-500: 1.3rem;
         --fs-400: 1rem;
     }
 }
@@ -42,6 +43,7 @@
         --fs-800: 6.25rem;
         --fs-700: 3.5rem;
         --fs-600: 2rem;
+        --fs-500: 1.75rem;
         --fs-400: 1.125rem;
     }
 }
@@ -241,6 +243,7 @@ select {
     text-transform: uppercase;
     letter-spacing: 4.72px;
     margin-bottom: 3rem;
+    margin-left: minmax(1rem, 1fr);
 }
 
 .numbered-title span {
@@ -509,5 +512,25 @@ body {
 @media (min-width: 45em) {
     .home {
         background-image: url(./assets/home/background-home-desktop.jpg);
+    }
+}
+
+/* destination */
+
+.destination {
+    background-image: url(./assets/destination/background-destination-mobile.jpg);
+    background-repeat: no-repeat;
+}
+
+@media (min-width: 35em) {
+    .destination {
+        background-position: center center;
+        background-image: url(./assets/destination/background-destination-tablet.jpg);
+    }
+}
+
+@media (min-width: 45em) {
+    .destination {
+        background-image: url(./assets/destination/background-destination-desktop.jpg);
     }
 }
