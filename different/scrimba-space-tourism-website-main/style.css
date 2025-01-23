@@ -12,7 +12,7 @@
     --fs-900: clamp(5rem, 9vw + 1rem, 9.375rem);
     --fs-800: 3.5rem;
     --fs-700: 1.5rem;
-    --fs-600: 1rem;
+    --fs-600: 1.125rem;
     --fs-500: 1rem;
     --fs-400: 0.9375rem;
     --fs-300: 1rem;
@@ -62,6 +62,7 @@ body,
 h1,
 h2,
 h3,
+h4,
 h5,
 p,
 figure,
@@ -398,7 +399,7 @@ select {
     --gap: 2rem;
 }
 
-.dot-indicators > * {
+.dot-indicators > button {
     cursor: pointer;
     border: 0;
     border-radius: 50%;
@@ -493,6 +494,26 @@ body {
     }
 }
 
+/* crew */
+
+.crew {
+    background-image: url(./assets/crew/background-crew-mobile.jpg);
+    background-repeat: no-repeat;
+}
+
+@media (min-width: 35em) {
+    .crew {
+        background-position: center center;
+        background-image: url(./assets/crew/background-crew-tablet.jpg);
+    }
+}
+
+@media (min-width: 45em) {
+    .crew {
+        background-image: url(./assets/crew/background-crew-desktop.jpg);
+    }
+}
+
 
 
 /* ------------------- */
@@ -551,6 +572,68 @@ body {
     font-size: 1.75rem;
 }
 
+
+/* crew layout */
+
+.grid-container--crew {
+    padding-bottom: 0;
+    --flow-space: 3rem;
+    grid-template-areas: 
+    'title'
+    'content'
+    'dots'
+    'image'
+}
+
+.grid-container--crew > .img-container {
+    grid-area: image;
+    position: relative;
+    max-width: 60%;
+    margin-top: 2rem;
+}
+
+.grid-container--crew > .img-container > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-container > .blur-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(
+        to bottom,
+        hsl( var(--clr-dark) / 0 ),
+        hsl( var(--clr-dark) / 1 )
+      );
+}
+
+.dot-indicators {
+    grid-area: dots;
+}
+
+.dot-indicators > button {
+    padding: .3rem;
+}
+
+.member-info {
+    grid-area: content;
+}
+
+.member-info > div {
+    --flow-space: 1rem;
+}
+
+.member-role {
+    color: hsl( var(--clr-white) / .5 );
+}
+
+.member-name {
+    margin-top: .5rem;
+}
+
 @media (min-width: 35rem) {
     .numbered-title {
         justify-self: start;
@@ -561,13 +644,17 @@ body {
         flex-direction: row;
         justify-content: space-evenly;
     }
+
+    .img-container > .blur-overlay {
+        display: none;
+    }
 }
 
 @media (min-width: 45em) {
     .grid-container {
         text-align: left;
         column-gap: var(--container-gap, 2rem);
-        grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(1rem, 1fr);
+        grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 35rem)) minmax(1rem, 1fr);
     }
 
     .grid-container--home {
@@ -597,11 +684,40 @@ body {
     }
 
     .destination-meta {
-        --gap: 3rem;
+        --gap: 2rem;
         justify-content: start;
     }
 
     .destination-meta > div {
         width: 150px;
+    }
+
+    .grid-container--crew {
+        justify-items: start;
+        padding-bottom: 3rem;
+        --flow-space: 3rem;
+        grid-template-areas: 
+        '. title title .'
+        '. content image .'
+        '. dots image .';
+    }
+
+    .dot-indicators {
+        margin-top: 0;
+        align-self: end;
+        --gap: 3rem;
+    }
+
+    .dot-indicators > button {
+        padding: .45rem;
+    }
+
+    .grid-container--crew > .img-container {
+        max-width: 80%;
+        align-self: end;
+    }
+
+    .img-container > .blur-overlay {
+        display: block;
     }
 }
