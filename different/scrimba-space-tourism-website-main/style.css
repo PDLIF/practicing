@@ -507,7 +507,7 @@ body {
     padding-bottom: 4rem;
 }
 
-.grid-container * {
+.grid-container p:not([class]) {
     max-width: 50ch;
 }
 
@@ -597,7 +597,11 @@ body {
     }
 
     .destination-meta {
-        --gap: 6rem;
+        --gap: 3rem;
         justify-content: start;
+    }
+
+    .destination-meta > div {
+        width: 150px;
     }
 }
