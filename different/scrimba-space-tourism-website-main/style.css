@@ -552,7 +552,7 @@ body {
         'content';
 }
 
-.grid-container--destination > img {
+.grid-container--destination > picture {
     grid-area: image;
     max-width: 40%;
 }
@@ -597,7 +597,7 @@ body {
     margin-top: 2rem;
 }
 
-.grid-container--crew > .img-container > img {
+.grid-container--crew > .img-container > picture > img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -682,7 +682,7 @@ body {
             '. image content .'
     }
 
-    .grid-container--destination > img {
+    .grid-container--destination > picture {
         max-width: 80%;
     }
 
