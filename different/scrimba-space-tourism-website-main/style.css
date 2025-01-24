@@ -24,7 +24,7 @@
     --ff-sans-normal: "Barlow", sans-serif;
 }
 
-@media (min-width: 35em) {
+@media (min-width: 35rem) {
     :root {
         --fs-800: 5rem;
         --fs-700: 2.5rem;
@@ -34,7 +34,7 @@
     }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 45rem) {
     :root {
         --fs-800: 6.25rem;
         --fs-700: 3.5rem;
@@ -145,6 +145,10 @@ select {
     margin-top: var(--flow-space, 1rem);
 }
 
+.flow--small-space {
+    --flow-space: .5rem;
+}
+
 .sr-only {
     position: absolute;
     width: 1px;
@@ -250,7 +254,7 @@ select {
 /* primary header */
 
 .logo {
-    margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
+    margin: 1.5rem clamp(1.5rem, 5vw, 4rem);
 }
 
 .primary-header {
@@ -302,7 +306,7 @@ select {
     cursor: pointer;
 }
 
-@media (max-width: 35em) {
+@media (max-width: 35rem) {
     .primary-navigation {
         --underline-gap: .5rem;
         position: fixed;
@@ -380,8 +384,9 @@ select {
 .underline-indicators > * {
     cursor: pointer;
     border: 0;
-    padding: var(--underline-gap, 1rem) 0;
+    padding: var(--underline-gap, .5rem) 0;
     border-bottom: .2rem solid hsl( var(--clr-white) / 0 );
+    background-color: transparent;
 }
 
 .underline-indicators > *:hover,
@@ -461,14 +466,14 @@ body {
     background-repeat: no-repeat;
 }
 
-@media (min-width: 35em) {
+@media (min-width: 35rem) {
     .home {
         background-position: center center;
         background-image: url(./assets/home/background-home-tablet.jpg);
     }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 45rem) {
     .home {
         background-image: url(./assets/home/background-home-desktop.jpg);
     }
@@ -481,14 +486,14 @@ body {
     background-repeat: no-repeat;
 }
 
-@media (min-width: 35em) {
+@media (min-width: 35rem) {
     .destination {
         background-position: center center;
         background-image: url(./assets/destination/background-destination-tablet.jpg);
     }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 45rem) {
     .destination {
         background-image: url(./assets/destination/background-destination-desktop.jpg);
     }
@@ -501,14 +506,14 @@ body {
     background-repeat: no-repeat;
 }
 
-@media (min-width: 35em) {
+@media (min-width: 35rem) {
     .crew {
         background-position: center center;
         background-image: url(./assets/crew/background-crew-tablet.jpg);
     }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 45rem) {
     .crew {
         background-image: url(./assets/crew/background-crew-desktop.jpg);
     }
@@ -622,7 +627,7 @@ body {
     grid-area: content;
 }
 
-.member-info > div {
+.member-info  {
     --flow-space: 1rem;
 }
 
@@ -630,9 +635,7 @@ body {
     color: hsl( var(--clr-white) / .5 );
 }
 
-.member-name {
-    margin-top: .5rem;
-}
+
 
 @media (min-width: 35rem) {
     .numbered-title {
@@ -644,17 +647,17 @@ body {
         flex-direction: row;
         justify-content: space-evenly;
     }
-
+    
     .img-container > .blur-overlay {
         display: none;
     }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 45rem) {
     .grid-container {
         text-align: left;
         column-gap: var(--container-gap, 2rem);
-        grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 35rem)) minmax(1rem, 1fr);
+        grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 45rem)) minmax(1rem, 1fr);
     }
 
     .grid-container--home {
@@ -713,7 +716,7 @@ body {
     }
 
     .grid-container--crew > .img-container {
-        max-width: 80%;
+        max-width: 100%;
         align-self: end;
     }
 
