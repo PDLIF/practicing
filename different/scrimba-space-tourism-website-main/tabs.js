@@ -42,7 +42,7 @@ function changeTabPanel(e) {
     const tabContainer = targetTab.parentNode;
     const mainContainer = tabContainer.parentNode;
 
-    tabs.forEach((tab) => {tab.setAttribute('aria-selected', false)});
+    tabList.querySelector('[aria-selected="true"]').setAttribute('aria-selected', false);
     targetTab.setAttribute('aria-selected', true);
 
     mainContainer
