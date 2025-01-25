@@ -34,7 +34,7 @@
     }
 }
 
-@media (min-width: 45rem) {
+@media (min-width: 50rem) {
     :root {
         --fs-800: 6.25rem;
         --fs-700: 3.5rem;
@@ -358,7 +358,7 @@ select {
     }
 }
 
-@media (min-width: 45rem) {
+@media (min-width: 50rem) {
     .primary-header::before {
         content: '';
         display: block;
@@ -472,7 +472,7 @@ body {
     }
 }
 
-@media (min-width: 45rem) {
+@media (min-width: 50rem) {
     .home {
         background-image: url(./assets/home/background-home-desktop.jpg);
     }
@@ -492,7 +492,7 @@ body {
     }
 }
 
-@media (min-width: 45rem) {
+@media (min-width: 50rem) {
     .destination {
         background-image: url(./assets/destination/background-destination-desktop.jpg);
     }
@@ -512,7 +512,7 @@ body {
     }
 }
 
-@media (min-width: 45rem) {
+@media (min-width: 50rem) {
     .crew {
         background-image: url(./assets/crew/background-crew-desktop.jpg);
     }
@@ -654,7 +654,7 @@ body {
     }
 }
 
-@media (min-width: 45rem) {
+@media (min-width: 50rem) {
     .grid-container {
         text-align: left;
         column-gap: var(--container-gap, 2rem);
