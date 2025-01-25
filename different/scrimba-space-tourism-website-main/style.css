@@ -544,6 +544,7 @@ body {
 
 .grid-container--destination {
     --flow-space: 3rem;
+    align-items: start;
     grid-template-areas: 
         'title'
         'image'
@@ -554,6 +555,7 @@ body {
 .grid-container--destination > picture {
     grid-area: image;
     max-width: 40%;
+    margin-top: 6rem;
 }
 
 .grid-container--destination > .tab-list {
@@ -691,7 +693,7 @@ body {
     }
 
     .destination-meta > div {
-        width: 150px;
+        width: 12rem;
     }
 
     .grid-container--crew {
