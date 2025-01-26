@@ -174,6 +174,8 @@ select {
 
 /* typoghraphy */
 
+p {line-height: 1.8rem;}
+
 .ff-serif { font-family: var(--ff-serif); } 
 .ff-sans-cond { font-family: var(--ff-sans-cond); } 
 .ff-sans-normal { font-family: var(--ff-sans-normal); }
@@ -528,8 +530,11 @@ body {
     display: grid;
     text-align: center;
     place-items: center;
-    padding-inline: 1rem;
     padding-bottom: 4rem;
+}
+
+.grid-container > * {
+    padding-inline: 2rem;
 }
 
 .grid-container p:not([class]) {
@@ -638,6 +643,55 @@ body {
 
 
 
+
+/* technology layout */
+
+.technology {
+    background-image: url(./assets/technology/background-technology-mobile.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.grid-container--technology {
+    grid-template-areas: 
+    'title'
+    'image'
+    'dots'
+    'content'
+}
+
+.grid-container--technology > picture {
+    grid-area: image;
+    margin-top: 5.5rem;
+    width: 100%;
+    height: 20rem;
+}
+
+#launch-vehicle-image {
+    background-image: url(./assets/technology/image-launch-vehicle-portrait.jpg);
+    background-position: bottom;
+    background-size: cover;
+}
+
+#spaceport-image {
+    background-image: url(./assets/technology/image-spaceport-portrait.jpg);
+}
+
+#spaceport-image {
+    background-image: url(./assets/technology/image-space-capsule-portrait.jpg);
+}
+
+.number-indicators {
+    grid-area: dots;
+    margin-top: 2rem;
+    flex-direction: row;
+}
+
+.technology-info {
+    grid-area: content;
+    margin-top: 3rem;
+}
+
 @media (min-width: 35rem) {
     .numbered-title {
         justify-self: start;
@@ -651,6 +705,18 @@ body {
     
     .img-container > .blur-overlay {
         display: none;
+    }
+
+    .technology {
+        background-image: url(./assets/technology/background-technology-tablet.jpg);
+    }
+
+    .grid-container--technology > picture {
+        height: 22.3rem;
+    }
+
+    .grid-container--technology > #launch-vehicle-image {
+        background-image: url(./assets/technology/image-launch-vehicle-landscape.jpg);
     }
 }
 
