@@ -700,8 +700,9 @@ body {
         justify-items: start;
         padding-bottom: 3rem;
         --flow-space: 3rem;
+        grid-template-columns: minmax(1rem, 1fr) minmax(0, 40rem) minmax(0, 50rem) minmax(1rem, 1fr);
         grid-template-areas: 
-        '. title title .'
+        '. title . .'
         '. content image .'
         '. dots image .';
     }
@@ -715,10 +716,21 @@ body {
     .dot-indicators > button {
         padding: .45rem;
     }
+    
+    .grid-container--crew > .numbered-title,
+    .grid-container--crew > .member-info,
+    .grid-container--crew > .dot-indicators {
+        margin-left: 3rem;
+    }
 
     .grid-container--crew > .img-container {
-        max-width: 100%;
+        grid-column: span 2;
         align-self: end;
+        justify-self: center;
+    }
+
+    .grid-container--crew > picture {
+        max-width: 100%;
     }
 
     .img-container > .blur-overlay {
