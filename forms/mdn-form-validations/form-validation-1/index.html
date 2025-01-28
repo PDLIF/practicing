@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Form validation: Task 1</title>
+    <style>
+      body {
+        background-color: #fff;
+        color: #333;
+        font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+        padding: 1em;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      li:where(:not(:first-child)) {
+          margin-top: 2rem;
+      }
+
+      /* input:user-invalid {
+        outline: 1px solid red;
+      } */
+
+      .invalid {
+          outline: 4px solid red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <h2>Enter your support query</h2>
+      <ul>
+        <li>
+          <label for="uname">User name:</label>
+          <input type="text" name="uname" id="uname" minlength="5" maxlength="20" pattern="^[a-z]\.[a-z0-9]{3,}$" required>
+        </li>
+        <li>
+          <label for="email">Email address:</label>
+          <input type="text" name="email" id="email" minlength="10" maxlength="15" required>
+        </li>
+        <li>
+          <label for="phone">Phone number:</label>
+          <input type="tel" name="phone" id="phone" pattern="^(\d{10}|\d{3}[-.\s]\d{3}[-.\s]\d{4})$" required>
+        </li>
+        <li>
+          <label for="comment">Comment:</label>
+          <textarea name="comment" id="comment" maxlength="200">
+          </textarea>
+        </li>
+        <li>
+          <button>Submit comment</button>
+        </li>
+      </ul>
+    </form>
+  </body>
+
+  <script>
+    const phoneInput = document.getElementById("phone");
+    const emailInput = document.getElementById('email');
+    
+    phoneInput.addEventListener("input", () => {
+      const pattern = /^(\d{10}|\d{3}[-.\s]\d{3}[-.\s]\d{4})$/;
+      
+      if (!pattern.test(phoneInput.value)) {
+        phoneInput.setCustomValidity("Please enter a valid phone number (e.g., 123-456-7890).");
+      } else {
+        phoneInput.setCustomValidity(""); // Clear the error if valid
+      }
+    });
+
+    const isValidEmail = () => {
+        const emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/;
+        const validity = emailInput !== 0 && emailRegExp.test(emailInput.value);
+        return validity;
+    }
+
+    const setEmailClass = (isValid) => {
+        emailInput.className = isValid ? 'valid' : 'invalid';
+    }
+
+    const updateError = (isValidInput) => {
+        if (isValidInput) {
+            emailInput.setCustomValidity('');
+        } else {
+            emailInput.setCustomValidity('the email is invalid');
+        }
+    }
+
+    emailInput.addEventListener('input', () => {
+        const emailValidity = isValidEmail();
+
+        setEmailClass(emailValidity);
+        updateError(emailValidity);
+    });
+  </script>
+
+</html>
