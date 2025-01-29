@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Inter:opsz,wght@14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <title>ODIN | Form Validation With JS</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- JS -->
+    <script src="./script.js" defer></script>
+</head>
+<body class="flex ff-sans bg-dark">
+    <form action="" class="form flex bg-dark-lighter text-white" novalidate>
+        <p class="form-header fs-700" style="font-weight: 500;">JS Form Validation</p>
+
+        <div class="form-field flex">
+            <label for="email">E-mail</label>
+            <input id="email" class="bg-dark text-white fs-400" name="email" type="email" required>
+            <p class="error-message email-error fs-200" hidden>Invalid e-mail</p>
+        </div>
+        <div class="form-field flex">
+            <label for="country">Country</label>
+            <select id="country" class="bg-dark text-white fs-400" name="country" type="text" required>
+                <option value="sw">Switzerland</option>
+                <option value="us">United States</option>
+                <option value="de">Germany</option>
+                <option value="nl">The Netherlands</option>
+            </select>
+        </div>
+        <div class="form-field flex">
+            <label for="zip-code">ZIP Code</label>
+            <input id="zip-code" class="bg-dark text-white fs-400" name="zip-code" type="text" required>
+            <p class="error-message zip-error fs-200" hidden>Invalid ZIP-code</p>
+        </div>
+        <div class="form-field flex">
+            <label for="password">Password</label>
+            <input id="password" class="bg-dark text-white fs-400" name="password" type="text" required>
+            <p class="error-message password-error fs-200" hidden>Invalid password</p>
+        </div>
+        <div class="form-field flex">
+            <label for="password-conf">Password Confirmation</label>
+            <input id="password-conf" class="bg-dark text-white fs-400" name="password-confirmation" type="text" required>
+            <p class="error-message password-conf-error fs-200" hidden>Passwords doesn't match</p>
+        </div>
+
+        <button class="bg-dark text-white fs-400">Submit</button>
+    </form>
+</body>
+</html>

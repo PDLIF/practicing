@@ -1,0 +1,194 @@
+:root {
+    /* colors */
+    --clr-dark: 230 35% 7%;
+    --clr-dark-lighter: 230 35% 17%;
+    --clr-light: 231 77% 90%;
+    --clr-white: 0 0% 100%;
+
+    /* fonts-sizes */
+    --fs-800: 3.5rem;
+    --fs-700: 1.5rem;
+    --fs-600: 1.125rem;
+    --fs-500: 1rem;
+    --fs-400: 0.9375rem;
+    --fs-300: 1rem;
+    --fs-200: 0.875rem;
+
+    /* font-families */
+    --ff-sans: "Poppins", serif;
+}
+
+
+
+
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* box-sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+    margin: 0;
+}
+
+/* reset font-weight */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 400;
+}
+
+body {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+
+
+
+
+
+
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+/* general */
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+/* colors */
+
+.bg-dark { background-color: hsl( var(--clr-dark) ); }
+.bg-dark-lighter {background-color: hsl( var(--clr-dark-lighter) ); }
+.bg-light { background-color: hsl( var(--clr-light) ); }
+.bg-white { background-color: hsl( var(--clr-white) ); }
+
+.text-dark { color: hsl( var(--clr-dark) ); }
+.text-light { color: hsl( var(--clr-light) ); }
+.text-white { color: hsl( var(--clr-white) ); }
+
+/* typography */
+
+.ff-sans { font-family: var(--ff-sans); }
+
+.uppercase { text-transform: uppercase; }
+
+.fs-900 { font-size: var(--fs-900); }
+.fs-800 { font-size: var(--fs-800); }
+.fs-700 { font-size: var(--fs-700); }
+.fs-600 { font-size: var(--fs-600); }
+.fs-500 { font-size: var(--fs-500); }
+.fs-400 { font-size: var(--fs-400); }
+.fs-300 { font-size: var(--fs-300); }
+.fs-200 { font-size: var(--fs-200); }
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+    line-height: 1.1;
+}
+
+
+
+
+
+
+/* ------------------- */
+/* Components          */   
+/* ------------------- */
+
+.form {
+    flex-direction: column;
+    --gap: 2rem;
+    width: 20rem;
+
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    border: 3px solid hsl( var(--clr-white) / .5 );
+}
+
+.form-header {
+    text-align: center;
+    cursor: default;
+}
+
+.form-field {
+    flex-direction: column;
+    --gap: .3rem;
+    position: relative;
+}
+
+.form-field > select {
+    appearance: none; /* Removes default styles */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    cursor: pointer;
+}
+
+.form-field > input,
+.form-field > select,
+.form > button {
+    border-radius: 1rem;
+    border: none;
+    padding: .5rem 1rem;
+}
+
+input[invalid] {
+    outline: 4px solid rgb(240, 0, 0);
+}
+
+input#password-conf:disabled {
+    background-color: hsl( var(--clr-dark) / 0.7 );
+    cursor: not-allowed;
+}
+
+.form > button {
+    align-self: flex-end;
+    width: 7rem;
+    cursor: pointer;
+}
+
+.form > button:hover {
+    background-color: hsl( var(--clr-dark) / .6 );
+}
+
+.error-message {
+    display: none;
+}
+
+input[invalid] + .error-message {
+    display: block;
+    position: absolute;
+    right: .5rem;
+    bottom: -1.6rem;
+    color: rgb(240, 0, 0);
+}
