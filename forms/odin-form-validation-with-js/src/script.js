@@ -1,3 +1,5 @@
+import './style.css'
+
 const form = document.querySelector('.form');
 const emailInput = document.getElementById('email');
 
@@ -176,8 +178,7 @@ const checkAllInputs = () => {
 // Event listeners
 
 window.onload = () => {
-    checkPasswordsMatch();
-    
+    isPasswordConfirmationAvailiable();
     emailInput.oninput = checkEmail;
     // countryInput.onchange = checkZipCode;
     zipCodeInput.oninput = checkZipCode;
